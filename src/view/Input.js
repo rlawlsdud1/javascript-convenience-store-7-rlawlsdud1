@@ -20,7 +20,7 @@ class Input {
     return await Console.readLineAsync(
       `현재 ${productName} ${
         quantity - numberOfBenefits
-      }개는 프로모션이 적용되지 않습니다. 그래도 구매하시겠습니까? (Y/N)\n`
+      }개는 프로모션 할인이 적용되지 않습니다. 그래도 구매하시겠습니까? (Y/N)\n`
     );
   }
 
