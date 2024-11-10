@@ -104,7 +104,7 @@ class ProductValidation {
       productNames.push(productName);
     }
     if (new Set(productNames).size !== productNames.length) {
-      throw new Error(SHOPPING_ERROR_MESSAGES.DUPLICATE_PRODUCT_NAME);
+      throw new Error(SHOPPING_ERROR_MESSAGES.UNEXPECTED_ERROR);
     }
   }
 
