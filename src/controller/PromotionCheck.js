@@ -108,8 +108,12 @@ class PromotionCheck {
           get
         );
 
-        // 혜택적용 개수보다 더 많이 담아서 일부는 프로모션 혜택 미적용을 알림
-        if (numberOfBenefits < quantity) {
+        // 애초에 혜택 받을 수 있는 재고가 없으면 전부 정가로 결제
+        if (numberOfBenefits === 0) {
+          confirmedProducts.push([productName, price, quantity, 0, quantity]);
+
+          // 혜택적용 개수보다 더 많이 담아서 일부는 프로모션 혜택 미적용을 알림
+        } else if (numberOfBenefits < quantity) {
           const answer = await this.confirmPurchaseWithoutBenefit(
             productName,
             quantity,
