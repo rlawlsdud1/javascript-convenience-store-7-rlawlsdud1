@@ -39,6 +39,7 @@ class LatestStockModel {
         product.quantity = 0;
       }
     });
+    return remainingQuantity;
   }
 
   #processRegularStock(productName, remainingQuantity) {
@@ -49,24 +50,31 @@ class LatestStockModel {
     for (const product of regularProducts) {
       if (product.quantity >= remainingQuantity) {
         product.quantity -= remainingQuantity;
-        break;
+        return 0; // 모든 재고 차감 완료
       } else {
         remainingQuantity -= product.quantity;
         product.quantity = 0;
       }
     }
+    return remainingQuantity;
   }
 
   updateStockQuantities(products) {
     products.forEach(([productName, _, quantity]) => {
       let remainingQuantity = quantity;
 
-      // 프로모션이 재고부터 차감
-      this.#processPromotionStock(productName, remainingQuantity);
+      // 프로모션이 있는 재고부터 차감
+      remainingQuantity = this.#processPromotionStock(
+        productName,
+        remainingQuantity
+      );
 
-      // 남은 수량이 있다면 일반 재고에서 차감
+      // 프로모션 재고에서 다 차감된 후, 남은 수량이 일반 재고에서 차감
       if (remainingQuantity > 0) {
-        this.#processRegularStock(productName, remainingQuantity);
+        remainingQuantity = this.#processRegularStock(
+          productName,
+          remainingQuantity
+        );
       }
     });
   }
