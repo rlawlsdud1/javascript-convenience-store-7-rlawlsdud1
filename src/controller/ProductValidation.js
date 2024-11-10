@@ -23,7 +23,7 @@ class ProductValidation {
       const [product, quantity] = this.#splitByDash(prod.slice(1, -1));
       parsedProduct.push([product.trim(), Number(quantity)]);
     } else {
-      throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+      throw new Error(SHOPPING_ERROR_MESSAGES.UNEXPECTED_ERROR);
     }
   }
 
@@ -87,7 +87,7 @@ class ProductValidation {
 
   static #validateQuantity(parsedProduct, latestStock) {
     if (!this.#validateQuantityFormat(parsedProduct)) {
-      throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+      throw new Error(SHOPPING_ERROR_MESSAGES.UNEXPECTED_ERROR);
     }
     if (!this.#validateQuantityExceeded(parsedProduct, latestStock)) {
       throw new Error(SHOPPING_ERROR_MESSAGES.QUANTITY_EXCEEDED);
