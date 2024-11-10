@@ -87,7 +87,7 @@ class ProductValidation {
 
   static #validateQuantity(parsedProduct, latestStock) {
     if (!this.#validateQuantityFormat(parsedProduct)) {
-      throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_QUANTITY);
+      throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
     }
     if (!this.#validateQuantityExceeded(parsedProduct, latestStock)) {
       throw new Error(SHOPPING_ERROR_MESSAGES.QUANTITY_EXCEEDED);
