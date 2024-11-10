@@ -44,8 +44,7 @@ class Output {
     giftedItems.forEach(([productName, quantity, price]) => {
       Console.print(
         productName.padEnd(FIELD_LENGTH.productName) +
-          String(quantity).padEnd(FIELD_LENGTH.quantity) +
-          price.toLocaleString().padStart(FIELD_LENGTH.price)
+          String(quantity).padEnd(FIELD_LENGTH.quantity)
       );
     });
   }
