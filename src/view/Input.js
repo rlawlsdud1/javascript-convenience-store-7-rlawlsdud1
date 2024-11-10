@@ -52,7 +52,7 @@ class Input {
           throw new Error();
         }
       } catch (error) {
-        Output.printErrorMsg(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+        Output.printErrorMsg(SHOPPING_ERROR_MESSAGES.UNEXPECTED_ERROR);
       }
     }
   }
