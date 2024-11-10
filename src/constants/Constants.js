@@ -6,6 +6,7 @@ export const SHOPPING_ERROR_MESSAGES = {
   QUANTITY_EXCEEDED:
     "[ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요.",
   DUPLICATE_PRODUCT_NAME: "[ERROR] 중복된 상품명이 있습니다. 다시 입력해주세요",
+  UNEXPECTED_ERROR: "[ERROR] 잘못된 입력입니다. 다시 입력해 주세요.",
 };
 
 export const SPECIAL_CHARACTER = {
@@ -34,9 +35,9 @@ export const FIELD_LENGTH = {
 };
 
 export const PRINT_MESSAGES = {
-  STORE_NAME: "============W 편의점==============",
-  GIFT_HEADER: "==============증정================",
-  SEPARATOR: "==================================",
+  STORE_NAME: "==============W 편의점================",
+  GIFT_HEADER: "=============증	정===============",
+  SEPARATOR: "====================================",
   PRODUCT_HEADER: {
     NAME: "상품명",
     QUANTITY: "수량",

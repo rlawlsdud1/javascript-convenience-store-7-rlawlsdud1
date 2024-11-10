@@ -80,7 +80,7 @@ class PromotionCheck {
 
   #validatePurchaseOpinion(purchaseOpinion) {
     if (purchaseOpinion !== "Y" && purchaseOpinion !== "N") {
-      throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+      throw new Error(SHOPPING_ERROR_MESSAGES.UNEXPECTED_ERROR);
     }
   }
 
