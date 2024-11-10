@@ -19,7 +19,7 @@ class LatestStockModel {
         (promotion) => promotion.name === item.promotion
       );
       if (inapplicablePromotion) {
-        return { ...item, quantity: 0 };
+        return { ...item, promotion: null };
       }
       return item;
     });
