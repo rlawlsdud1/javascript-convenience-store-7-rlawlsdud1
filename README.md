@@ -154,3 +154,7 @@
 
     4. [초코바-5],[초코바-5],[초코바-5],[초코바-5] 처럼 같은 상품을 계속해서 입력하면 매 순간 개수 차감에서 구매 가능 여부를 파악해야 하는건지?
       - 우선 중복된 상품명을 입력한다면 ERROR를 반환하고 다시 입력하게끔 하였음.
+
+## ⏩ 4. Promotion check flow
+
+![Promotion check flow](./src/assets/promotion_check_flow.png)
