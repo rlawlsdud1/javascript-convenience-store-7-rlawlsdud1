@@ -37,6 +37,25 @@ class Input {
       SHOPPING_MESSAGES.REQUEST_MEMBERSHIP_APPLIED
     );
   }
+
+  static async askForAdditionalPurchase() {
+    while (true) {
+      const answer = await Console.readLineAsync(
+        SHOPPING_MESSAGES.ADDITIONAL_PURCHASE
+      );
+      try {
+        if (answer === "Y") {
+          return true;
+        } else if (answer === "N") {
+          return false;
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        Output.printErrorMsg(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+      }
+    }
+  }
 }
 
 export default Input;
