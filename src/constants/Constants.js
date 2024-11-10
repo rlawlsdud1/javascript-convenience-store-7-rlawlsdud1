@@ -24,3 +24,28 @@ export const SHOPPING_MESSAGES = {
   ADDITIONAL_PURCHASE:
     "\n감사합니다. 구매하고 싶은 다른 상품이 있나요? (Y/N)\n",
 };
+
+export const FIELD_LENGTH = {
+  productName: 12,
+  quantity: 8,
+  price: 10,
+  total: 16,
+  discount: 25,
+};
+
+export const PRINT_MESSAGES = {
+  STORE_NAME: "============W 편의점==============",
+  GIFT_HEADER: "==============증정================",
+  SEPARATOR: "==================================",
+  PRODUCT_HEADER: {
+    NAME: "상품명",
+    QUANTITY: "수량",
+    PRICE: "금액",
+  },
+  TOTALS: {
+    TOTAL_PURCHASE: "총구매액",
+    PROMO_DISCOUNT: "행사할인",
+    MEMBERSHIP_DISCOUNT: "멤버십할인",
+    AMOUNT_DUE: "내실돈",
+  },
+};
