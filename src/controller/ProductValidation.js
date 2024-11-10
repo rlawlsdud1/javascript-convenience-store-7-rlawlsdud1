@@ -21,6 +21,9 @@ class ProductValidation {
   static #parseProductData(prod, parsedProduct) {
     if (this.#isBracketed(prod)) {
       const [product, quantity] = this.#splitByDash(prod.slice(1, -1));
+      if (!product.length) {
+        throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
+      }
       parsedProduct.push([product.trim(), Number(quantity)]);
     } else {
       throw new Error(SHOPPING_ERROR_MESSAGES.INVALID_FORMAT);
