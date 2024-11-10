@@ -14,15 +14,36 @@ class LatestStockModel {
 
   #applyPromotions() {
     const invalidPromotions = this.#promotionModel.invalidPromotions;
-    return this.#stockModel.stockList.map((item) => {
-      const inapplicablePromotion = invalidPromotions.find(
+    const updatedStock = [];
+
+    this.#stockModel.stockList.forEach((item) => {
+      const inapplicablePromotion = invalidPromotions.some(
         (promotion) => promotion.name === item.promotion
       );
+
       if (inapplicablePromotion) {
-        return { ...item, promotion: null };
+        const generalStock = updatedStock.find(
+          (stock) => stock.name === item.name && !stock.promotion
+        );
+
+        if (generalStock) {
+          generalStock.quantity += item.quantity;
+        } else {
+          updatedStock.push({ ...item, promotion: null });
+        }
+      } else {
+        const generalStock = updatedStock.find(
+          (stock) => stock.name === item.name && !stock.promotion
+        );
+        if (generalStock) {
+          generalStock.quantity += item.quantity;
+        } else {
+          updatedStock.push(item);
+        }
       }
-      return item;
     });
+
+    return updatedStock;
   }
 
   #processPromotionStock(productName, remainingQuantity) {
