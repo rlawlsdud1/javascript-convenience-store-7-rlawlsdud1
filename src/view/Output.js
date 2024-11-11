@@ -41,7 +41,7 @@ class Output {
 
   static printGiftedItems(giftedItems) {
     Console.print(PRINT_MESSAGES.GIFT_HEADER);
-    giftedItems.forEach(([productName, quantity, price]) => {
+    giftedItems.forEach(([productName, quantity]) => {
       Console.print(
         productName.padEnd(FIELD_LENGTH.productName) +
           String(quantity).padEnd(FIELD_LENGTH.quantity)
