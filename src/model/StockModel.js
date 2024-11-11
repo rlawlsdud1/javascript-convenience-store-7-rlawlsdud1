@@ -38,6 +38,9 @@ class StockModel {
 
   #parseValue(header, value) {
     if (header === "price" || header === "quantity") {
+      if (value === "재고 없음") {
+        return 0;
+      }
       return Number(value);
     }
     if (value === "null") {
