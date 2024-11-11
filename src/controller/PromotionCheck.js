@@ -138,7 +138,7 @@ class PromotionCheck {
             }
           } else {
             if (!numberOfBenefits) {
-              break;
+              confirmedProducts.push([productName, 0, 0, 0, 0]);
             } else {
               // 혜택을 최대로 받을 수 있는 만큼만 산다
               confirmedProducts.push([
