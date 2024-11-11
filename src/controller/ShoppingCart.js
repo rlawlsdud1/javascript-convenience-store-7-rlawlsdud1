@@ -96,7 +96,7 @@ class ShoppingCart {
   async calculateMembershipDiscount(nonBenefitTotalPrice) {
     const membershipDiscountChoice = await this.askForMembershipDiscount();
     if (membershipDiscountChoice === "Y") {
-      return Math.min(nonBenefitTotalPrice * 0.3, 8000);
+      return Math.min(Math.floor(nonBenefitTotalPrice * 0.3), 8000);
     }
     return 0;
   }
