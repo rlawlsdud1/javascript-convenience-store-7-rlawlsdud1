@@ -10,7 +10,7 @@ class ProductValidation {
       SPECIAL_CHARACTER.COMMA
     );
     productSplitedByCommas.map((prod) => {
-      this.#parseProductData(prod, parsedProduct);
+      this.#parseProductData(prod.trim(), parsedProduct);
     });
     return parsedProduct;
   }
