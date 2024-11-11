@@ -26,7 +26,7 @@ class PromotionCheck {
   // promotion 재고는 단 하나뿐이므로 find로 처리 가능
   getPromotionStock(productFromStock) {
     return productFromStock.find((stock) => {
-      return stock.promotion !== null;
+      return stock.promotion !== null && stock.quantity !== 0;
     });
   }
 
