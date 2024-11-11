@@ -50,7 +50,7 @@ class PromotionModel {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    return start <= today && today <= end;
+    return start <= today && today < end;
   }
 
   get validPromotions() {
